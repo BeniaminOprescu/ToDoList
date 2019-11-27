@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ButtonComponent from '../button/buttonComponent'
 import TodoElementComponent from '../todoElement/todoElementComponent'
-import { isTSMethodSignature } from '@babel/types'
 
 export default class ListComponent extends Component{
 
@@ -12,12 +11,11 @@ export default class ListComponent extends Component{
     }
 
     render() {
-        console.log(this.props)
 
         const listElements = this.props.elements.map(
             (element) => 
-                <TodoElementComponent 
-                    key={element.key}    
+                <TodoElementComponent
+                    id={element.id}    
                     deleteElement ={this.props.deleteElement}>
                 </TodoElementComponent>
         )
